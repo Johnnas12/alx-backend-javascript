@@ -1,5 +1,31 @@
-import getNeighborhoodsList from './2-arrow.js';
+const THRESHOLD_A = 8;
 
-const neighborhoodsList = new getNeighborhoodsList();
-const res = neighborhoodsList.addNeighborhood('Noe Valley');
-console.log(res);
+function tetheredGetNumber(resolve, reject){
+
+    setTimeout(() => {
+        const randomInt = rand.now();
+        const value = randomInt % 10;
+        if(value < THRESHOLD_A){
+            resolve(value);
+        }else{
+            reject(`too large ${value}`);
+        }
+    }, 500);
+}
+
+function determineParity(value){
+    const isOdd = value % 2 === 1;
+     return {value, isOdd}
+}
+
+function troubleWithGetNumber(reason){
+    const err = new Error("trouble getting number", {cause: reason});
+    console.log(err);
+    threw err;
+}
+
+function promiseGetWord(parityInfo){
+    return new Promise((resolve, reject)=>{
+        const {value, isOdd}
+    })
+}
